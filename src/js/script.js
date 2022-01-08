@@ -83,6 +83,7 @@
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
     initAccordion() {
@@ -146,13 +147,25 @@
           const option = param.options[optionId];
           // console.log(optionId, option);
           if (formData[paramId].includes(optionId) && !option.default) {
-            //jezeli wybrany produkt nie jest opcją domyślną to cena rośnie
+            //  jezeli wybrany produkt nie jest opcją domyślną to cena rośnie
             console.log(optionId, 'WYBRANE - NIE DOMYSLNE');
             price += option.price;
           } else if (!formData[paramId].includes(optionId) && option.default) {
-            //jezeli nie wybrał produktu a był opcją domyślną to cena maleje
+            //  jezeli nie wybrał produktu a był opcją domyślną to cena maleje
             console.log(optionId, 'NIE WYBRANE - DOMYSLNE');
             price -= option.price;
+          }
+
+          //  Znalezienie obrazka o klasie .paramId-optionId w divie z obrazkami.
+          const optionImage = thisProduct.imageWrapper.querySelector(`.${paramId}-${optionId}`);
+          //  czy obrazek istnieje i jest wybrany
+          if (optionImage && formData[paramId].includes(optionId)) {
+            //  jezeli tak to dodajemy klase Acrtive dla obrazka
+            optionImage.classList.add(classNames.menuProduct.imageVisible);
+            //  czy obrazek istnieje i jest niewybrany
+          } else if (optionImage && !formData[paramId].includes(optionId)) {
+            //  jezeli tak to zdejmujemy klase active z obrazka
+            optionImage.classList.remove(classNames.menuProduct.imageVisible);
           }
         }
       }

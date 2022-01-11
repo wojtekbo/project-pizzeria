@@ -342,11 +342,9 @@
     ///////////////////////// [TO DO]
     remove(cartProduct) {
       const thisCart = this;
-      console.log('remove Card', cartProduct);
+      const productIndex = thisCart.products.indexOf(cartProduct);
+      thisCart.products.splice(productIndex, 1);
       cartProduct.dom.wrapper.remove();
-      const productToRemove = thisCart.products.indexOf(cartProduct);
-      console.log('productToRemove: ', productToRemove);
-      // thisCart.products;
       thisCart.update();
     }
 

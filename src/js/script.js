@@ -344,8 +344,10 @@
       const thisCart = this;
       console.log('remove Card', cartProduct);
       cartProduct.dom.wrapper.remove();
+      const productToRemove = thisCart.products.indexOf(cartProduct);
+      console.log('productToRemove: ', productToRemove);
       // thisCart.products;
-      // thisCart.update();
+      thisCart.update();
     }
 
     update() {

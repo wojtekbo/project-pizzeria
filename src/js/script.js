@@ -323,7 +323,7 @@
       const thisCart = this;
       thisCart.dom.toggleTrigger.addEventListener('click', () => thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive));
       thisCart.dom.productList.addEventListener('updated', () => thisCart.update());
-      thisCart.dom.productList.addEventListener('remove', () => thisCart.remove(event.detail.cartProduct));
+      thisCart.dom.productList.addEventListener('remove', (event) => thisCart.remove(event.detail.cartProduct));
     }
     add(menuProduct) {
       // const thisCart = this;
@@ -340,9 +340,10 @@
       thisCart.update();
     }
     ///////////////////////// [TO DO]
-    remove(cos) {
+    remove(cartProduct) {
       const thisCart = this;
-      console.log(thisCart, cos);
+      console.log('remove Card', cartProduct);
+      cartProduct.dom.wrapper.remove();
       // thisCart.products;
       // thisCart.update();
     }

@@ -163,7 +163,7 @@
 
     initAmountWidget() {
       const thisProduct = this;
-      thisProduct.amountWidget = new AmountWidget(thisProduct.dom.amountWidgetElem);
+      thisProduct.amountWidget = new AmountWidget(thisProduct.dom.amountWidgetElem, settings.amountWidget.defaultValue);
       thisProduct.dom.amountWidgetElem.addEventListener('updated', () => thisProduct.processOrder());
     }
 
@@ -263,13 +263,14 @@
   }
 
   class AmountWidget {
-    constructor(element) {
+    constructor(element, value) {
+      // debugger;
       const thisWidget = this;
       // thisWidget.element = element;
       // console.log('AmountWidget: ', thisWidget);
       // console.log('constructor arguments (element): ', element);
       thisWidget.getElements(element);
-      thisWidget.setValue(settings.amountWidget.defaultValue);
+      thisWidget.setValue(value);
       thisWidget.initActions();
     }
     getElements(element) {
@@ -282,7 +283,6 @@
     setValue(value) {
       const thisWidget = this;
       const newValue = parseInt(value);
-      // [TO DO] Add validation
       if (newValue !== thisWidget.value && !isNaN(newValue) && !(newValue < settings.amountWidget.defaultMin) && !(newValue > settings.amountWidget.defaultMax)) {
         thisWidget.value = newValue;
       }
@@ -333,7 +333,7 @@
     add(menuProduct) {
       // const thisCart = this;
       const thisCart = this;
-      // console.log('adding product: ', menuProduct);
+      console.log('adding product: ', menuProduct);
       // generate HTML based on template
       const generatedHTML = templates.cartProduct(menuProduct);
       // create element using utils.createElementFromHTML
@@ -344,7 +344,7 @@
       // console.log('thisCart.products', thisCart.products);
       thisCart.update();
     }
-    ///////////////////////// [TO DO]
+
     remove(cartProduct) {
       const thisCart = this;
       const productIndex = thisCart.products.indexOf(cartProduct);
@@ -402,7 +402,7 @@
     }
     initAmountWidget() {
       const thisCartProduct = this;
-      thisCartProduct.amountWidget = new AmountWidget(thisCartProduct.dom.amountWidget);
+      thisCartProduct.amountWidget = new AmountWidget(thisCartProduct.dom.amountWidget, thisCartProduct.amount);
       thisCartProduct.dom.amountWidget.addEventListener('updated', () => {
         thisCartProduct.amount = thisCartProduct.amountWidget.value;
         thisCartProduct.price = thisCartProduct.amount * thisCartProduct.priceSingle;

@@ -44,7 +44,6 @@ class CartProduct {
     });
   }
   remove() {
-    console.log('USUWANIE');
     const thisCartProduct = this;
     const event = new CustomEvent('remove', {
       bubbles: true,

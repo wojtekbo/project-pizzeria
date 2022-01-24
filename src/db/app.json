@@ -202,7 +202,7 @@
   "events": [
     {
       "id": 1,
-      "date": "2021-01-01",
+      "date": "2022-02-01",
       "hour": "12:30",
       "table": 1,
       "repeat": false,
@@ -212,7 +212,7 @@
     },
     {
       "id": 2,
-      "date": "2021-01-01",
+      "date": "2022-01-01",
       "hour": "16:00",
       "table": 3,
       "repeat": "daily",
@@ -222,7 +222,7 @@
     },
     {
       "id": 3,
-      "date": "2021-01-01",
+      "date": "2022-01-01",
       "hour": "12:00",
       "table": 3,
       "repeat": "daily",
@@ -232,7 +232,7 @@
     },
     {
       "id": 4,
-      "date": "2021-01-01",
+      "date": "2022-01-01",
       "hour": "13:00",
       "table": 2,
       "repeat": "daily",
@@ -242,13 +242,53 @@
     },
     {
       "id": 5,
-      "date": "2021-01-01",
+      "date": "2022-01-01",
       "hour": "18:00",
       "table": 2,
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
       "starters": ["lemonWater"]
+    },
+    {
+      "id": 6,
+      "date": "2022-01-25",
+      "hour": "17:00",
+      "table": 1,
+      "repeat": false,
+      "duration": 4,
+      "ppl": 4,
+      "starters": ["lemonWater"]
+    },
+    {
+      "id": 7,
+      "date": "2022-01-26",
+      "hour": "20:00",
+      "table": 2,
+      "repeat": false,
+      "duration": 3,
+      "ppl": 7,
+      "starters": []
+    },
+    {
+      "id": 8,
+      "date": "2021-02-02",
+      "hour": "12:30",
+      "table": 1,
+      "repeat": false,
+      "duration": 4,
+      "ppl": 3,
+      "starters": []
+    },
+    {
+      "id": 9,
+      "date": "2021-01-28",
+      "hour": "15:00",
+      "table": 1,
+      "repeat": false,
+      "duration": 2,
+      "ppl": 3,
+      "starters": []
     }
   ],
   "bookings": [
@@ -256,8 +296,26 @@
       "id": 1,
       "date": "2022-02-01",
       "hour": "15:30",
-      "table": 1,
+      "table": 3,
       "duration": 3,
+      "ppl": 3,
+      "starters": ["water"]
+    },
+    {
+      "id": 2,
+      "date": "2022-02-02",
+      "hour": "13:30",
+      "table": 3,
+      "duration": 2,
+      "ppl": 5,
+      "starters": ["water"]
+    },
+    {
+      "id": 3,
+      "date": "2022-01-29",
+      "hour": "18:00",
+      "table": 1,
+      "duration": 4,
       "ppl": 3,
       "starters": ["water"]
     }

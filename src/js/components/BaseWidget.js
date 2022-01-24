@@ -16,7 +16,6 @@ class BaseWidget {
 
   set value(value) {
     const thisWidget = this;
-
     const newValue = thisWidget.parseValue(value);
 
     if (newValue !== thisWidget.correctValue && thisWidget.isValid(newValue)) {
@@ -44,6 +43,7 @@ class BaseWidget {
   renderValue() {
     const thisWidget = this;
     thisWidget.dom.wraper.innerHTML = thisWidget.value;
+    // thisWidget.dom.wraper.innerHTML = thisWidget.value;
   }
 
   announce() {
@@ -56,3 +56,5 @@ class BaseWidget {
 }
 
 export default BaseWidget;
+
+////////////

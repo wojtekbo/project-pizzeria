@@ -156,6 +156,10 @@
     line-height: 50px;
   }
 
+  .selected {
+    border: 3px green solid;
+  }
+
   .table {
     @extend .h2;
     width: 70px;

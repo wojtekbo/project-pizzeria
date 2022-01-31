@@ -14,7 +14,7 @@ class Product {
     thisProduct.initOrderForm();
     thisProduct.initAmountWidget();
     thisProduct.processOrder();
-    console.log('   *** stworzono obiekt: ', id, ' ***');
+    // console.log('   *** stworzono obiekt: ', id, ' ***');
   }
   renderInMenu() {
     const thisProduct = this;

@@ -8,7 +8,7 @@ class Cart {
     thisCart.products = [];
     thisCart.getElements(element);
     thisCart.initActions();
-    console.log('   *** Stworzono koszk: ', thisCart, ' ***');
+    // console.log('   *** Stworzono koszk: ', thisCart, ' ***');
   }
   getElements(element) {
     const thisCart = this;
@@ -92,7 +92,7 @@ class Cart {
     for (let prod of thisCart.products) {
       payload.products.push(prod.getData());
     }
-    console.log(payload);
+    // console.log(payload);
 
     // fetch(url, {
     //   method: 'POST',
@@ -111,7 +111,7 @@ class Cart {
     };
     fetch(url, options)
       .then((response) => response.json())
-      .then((parsedResponse) => console.log('parsedResponse', parsedResponse));
+      .then((parsedResponse) => alert('Zamwienie wysłane!'));
   }
 }
 

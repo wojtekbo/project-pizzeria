@@ -25,8 +25,6 @@ class Booking {
       eventsRepeat: [settings.db.repeatParam, endDateParam],
     };
 
-    // console.log('params', params);
-
     const urls = {
       booking: settings.db.url + '/' + settings.db.bookings + '?' + params.booking.join('&'),
       eventsCurrent: settings.db.url + '/' + settings.db.events + '?' + params.eventsCurrent.join('&'),
@@ -218,8 +216,8 @@ class Booking {
     };
     fetch(url, options)
       .then((response) => response.json())
-      .then((parsedResponse) => console.log('parsedResponse', parsedResponse));
-    alert('Rezerwacja wysłana, Dziękujemy!');
+      .then((parsedResponse) => alert('Rezerwacja wysłana, Dziękujemy!'));
+
     thisBooking.makeBooked(payload.date, payload.hour, payload.duration, payload.table);
     thisBooking.clearTables();
     thisBooking.updateDOM();

@@ -216,7 +216,10 @@ class Booking {
     };
     fetch(url, options)
       .then((response) => response.json())
-      .then((parsedResponse) => alert('Rezerwacja wysłana, Dziękujemy!'));
+      .then((parsedResponse) => {
+        console.log(parsedResponse);
+        alert('Rezerwacja wysłana, Dziękujemy!');
+      });
 
     thisBooking.makeBooked(payload.date, payload.hour, payload.duration, payload.table);
     thisBooking.clearTables();

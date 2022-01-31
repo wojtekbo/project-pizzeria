@@ -111,7 +111,10 @@ class Cart {
     };
     fetch(url, options)
       .then((response) => response.json())
-      .then((parsedResponse) => alert('Zamwienie wysłane!'));
+      .then((parsedResponse) => {
+        console.log(parsedResponse);
+        alert('Zamwienie wysłane!');
+      });
   }
 }
 

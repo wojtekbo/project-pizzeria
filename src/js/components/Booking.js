@@ -44,6 +44,9 @@ class Booking {
       .then(function ([bookings, eventsCurrent, eventsRepeat]) {
         // console.log(bookings, eventsCurrent, eventsRepeat);
         thisBooking.parseData(bookings, eventsCurrent, eventsRepeat);
+      })
+      .catch(() => {
+        console.log('brak danych');
       });
   }
 
